@@ -1,0 +1,27 @@
+apiVersion: policy.sigstore.dev/v1alpha1
+kind: ClusterImagePolicy
+metadata:
+  name: kyverno-cluster-image-policy
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+spec:
+  images:
+  - glob: "ghcr.io/kyverno/test-verify-image:*"
+  authorities:
+  - name: custom-key
+    key:
+      secretRef:
+        name: kyverno-public-key
+---
+apiVersion: policy.sigstore.dev/v1alpha1
+kind: ClusterImagePolicy
+metadata:
+  name: baseline-cluster-image-policy
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+spec:
+  images:
+  - glob: "**"
+  authorities:
+  - static:
+      action: pass

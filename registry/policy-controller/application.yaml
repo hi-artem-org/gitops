@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: policy-controller
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: cosign-system
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    chart: policy-controller
+    repoURL: https://sigstore.github.io/helm-charts
+    targetRevision: 0.2.1
+    helm:
+      releaseName: policy-controller
+      values: |
+        cosign:
+          secretKeyRef:
+            name: public-key
+        policywebhook:
+          env: { KUBERNETES_MIN_VERSION: '1.21.0-0' }
+        webhook:
+          env: { KUBERNETES_MIN_VERSION: '1.21.0-0' }
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
