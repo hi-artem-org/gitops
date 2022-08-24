@@ -4,7 +4,7 @@ metadata:
   name: kyverno-signed
   namespace: sigstore-enforced
   annotations:
-    tag: signed
+    deploymentTag: unsigned
 spec:
   selector:
     matchLabels:
@@ -16,4 +16,4 @@ spec:
     spec:
       containers:
       - name: test-verify-image
-        image: ghcr.io/kyverno/test-verify-image:signed
+        image: ghcr.io/kyverno/test-verify-image:unsigned
