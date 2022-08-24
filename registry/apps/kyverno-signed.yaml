@@ -4,6 +4,9 @@ metadata:
   name: kyverno-signed
   namespace: sigstore-enforced
 spec:
+  selector:
+    matchLabels:
+      app: kyverno-signed
   template:
     metadata:
       labels:
