@@ -20,3 +20,8 @@ spec:
     automated:
       prune: true
       selfHeal: true
+  ignoreDifferences:
+  - group: '*'
+    kind: '*'
+    managedFieldsManagers:
+    - policy-controller
