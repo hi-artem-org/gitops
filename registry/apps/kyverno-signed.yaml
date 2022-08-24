@@ -15,5 +15,5 @@ spec:
       containers:
       - name: test-verify-image
         image: ghcr.io/kyverno/test-verify-image:signed
-        command: ["sleep"]
-        args: ["10000"]
+        # command: ["sleep"]
+        # args: ["10000"]
