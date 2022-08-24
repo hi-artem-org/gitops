@@ -1,17 +1,17 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: kyverno-signed-by-someone-else
-  namespace: sigstore-enforced
-spec:
-  selector:
-    matchLabels:
-      app: kyverno-signed-by-someone-else
-  template:
-    metadata:
-      labels:
-        app: kyverno-signed-by-someone-else
-    spec:
-      containers:
-      - name: test-verify-image
-        image: ghcr.io/kyverno/test-verify-image:signed-by-someone-else
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: kyverno-signed-by-someone-else
+#   namespace: sigstore-enforced
+# spec:
+#   selector:
+#     matchLabels:
+#       app: kyverno-signed-by-someone-else
+#   template:
+#     metadata:
+#       labels:
+#         app: kyverno-signed-by-someone-else
+#     spec:
+#       containers:
+#       - name: test-verify-image
+#         image: ghcr.io/kyverno/test-verify-image:signed-by-someone-else

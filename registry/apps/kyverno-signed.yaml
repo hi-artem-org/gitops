@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   name: kyverno-signed
   namespace: sigstore-enforced
+  annotations:
+    tag: signed
 spec:
   selector:
     matchLabels:
