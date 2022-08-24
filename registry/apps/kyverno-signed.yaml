@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kyverno-signed
+  namespace: sigstore-enforced
+spec:
+  template:
+    metadata:
+      labels:
+        app: kyverno-signed
+    spec:
+      containers:
+      - name: test-verify-image
+        image: ghcr.io/kyverno/test-verify-image:signed
+        command: ["sleep"]
+        args: ["10000"]
