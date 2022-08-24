@@ -19,7 +19,7 @@ spec:
       values: |
         cosign:
           secretKeyRef:
-            name: public-key
+            name: kyverno-public-key
         policywebhook:
           env: { KUBERNETES_MIN_VERSION: '1.21.0-0' }
         webhook:
