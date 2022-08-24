@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kyverno-unsigned
+  namespace: sigstore-enforced
+spec:
+  selector:
+    matchLabels:
+      app: kyverno-unsigned
+  template:
+    metadata:
+      labels:
+        app: kyverno-unsigned
+    spec:
+      containers:
+      - name: test-verify-image
+        image: ghcr.io/kyverno/test-verify-image:unsigned
+        # command: ["sleep"]
+        # args: ["10000"]
