@@ -21,7 +21,7 @@ spec:
       prune: true
       selfHeal: true
   ignoreDifferences:
-  - group: '*'
-    kind: '*'
-    managedFieldsManagers:
-    - policy-controller
+  - group: apps
+    kind: Deployment
+    jqPathExpressions:
+    - .spec.template.spec.containers[].image
