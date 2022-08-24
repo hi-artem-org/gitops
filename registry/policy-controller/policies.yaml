@@ -6,7 +6,7 @@ metadata:
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
 spec:
   images:
-  - glob: "ghcr.io/kyverno/test-verify-image:*"
+  - glob: "ghcr.io/kyverno*"
   authorities:
   - name: custom-key
     key:
