@@ -18,8 +18,8 @@ spec:
       releaseName: neuvector
       values: |
         manager:
-          # env:
-          #   ssl: false
+          env:
+            ssl: false
           svc:
             type: NodePort
         controller:
