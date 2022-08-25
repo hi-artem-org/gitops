@@ -15,7 +15,7 @@ spec:
     targetRevision: main
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd
+    namespace: kyverno-signed
   syncPolicy:
     automated:
       prune: true
