@@ -20,6 +20,8 @@ spec:
         manager:
           env:
             ssl: false
+          svc:
+            type: NodePort
         controller:
           replicas: 1
         cve:
