@@ -17,6 +17,9 @@ spec:
     helm:
       releaseName: neuvector
       values: |
+        manager:
+          env:
+            ssl: false
         controller:
           replicas: 1
         cve:
